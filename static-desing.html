@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Threat Advisory | Accorian</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://www.accorian.com/wp-content/uploads/2024/10/Favicon.webp" sizes="32x32" />
+    <link rel="stylesheet" type="text/css" href="https://adarshaccorian.github.io/threat-advisory/style.css" defer>
+</head>
+<body>
+    <div class="page-wrapper">
+        <article class="card">
+            <header class="article-header">
+                <img src="https://www.accorian.com/wp-content/uploads/2024/10/Accorian-Logo.svg" alt="Accorian Logo">
+                <h1>Akira Ransomware Targeting SonicWall SSL VPN</h1>
+                <div class="meta-row">
+                    <div class="meta-left">
+                        <span>September 3, 2025</span>
+                    </div>
+                </div>
+            </header>
+            <section>
+                <div class="text-description-box">
+                    <h2>Description</h2>
+                    <p> Since mid-July 2025, cybersecurity firms, including Arctic Wolf, Huntress, Field Effect, and others, have observed a surge in ransomware activity by the Akira group, with initial access leveraging SonicWall SSL VPN appliances, notably Gen 7 and newer devices with SSLVPN enabled.</p>
+                    <p>While early speculation leaned toward a zero-day exploit due to incidents involving fully patched devices, SonicWall and multiple researchers now assert high confidence that the activity stems from the exploitation of CVE-2024-40766. This vulnerability notably arises when local account credentials are carried over during migration from Gen 6 to Gen 7 without password resets.</p>
+                    <p> In parallel, Akira has demonstrated a rapid post-access chain of behavior, including disabling security tools, deploying ransomware, and exfiltrating data. In some cases, they’ve deployed a “bring-your-own-vulnerable-driver” (BYOD) technique to disable Microsoft Defender via the malicious installation of a driver that is supported by a legitimate driver.</p>
+                </div>
+          
+                <div class="text-description-box">
+                    <h2>Impact</h2>
+                    <p>Exploitation of SonicWall SSL VPNs by Akira carries serious repercussions:</p>
+                    <ul>
+                        <li><strong>Unauthorized Access:</strong> Attackers gain entry to networks via compromised VPN access.</li>
+                        <li><strong>Rapid Tooling:</strong> Evidence shows a short time window between VPN compromise and ransomware execution.</li>
+                        <li><strong>Security Evasion:</strong> Installs drivers to disable antivirus/EDR, evades detection, deletes backups, and encryption routines follow swiftly.</li>
+                        <li><strong>Broad Targeting:</strong> Akira has impacted hundreds of organizations globally, including MSPs, SMBs, and sectors like education, healthcare, IT, manufacturing, and finance.</li>
+                        <li><strong>Credential Reuse Risk:</strong> Legacy or service accounts (e.g., LDAP bind accounts) can be overprivileged, enabling lateral movement when compromised.</li>
+                    </ul>
+                </div>
+          
+                <div class="text-description-box">
+                    <h2>Recommendations</h2>
+                    <ul>
+                        <li>Disable SonicWall SSL VPN where feasible, as this is the most reliable risk mitigation.</li>
+                        <li>If SSL VPN cannot be disabled, restrict access via IP allow-listing (trusted IPs only), and apply network segmentation to limit lateral movement.</li>
+                        <li>Reset all local user account passwords, especially those migrated from Gen 6 to Gen 7 without change.</li>
+                        <li>Upgrade to SonicOS version 7.3.0 (or newer), which includes protections for brute-force attack mitigation, improved MFA, and other security enhancements.</li>
+                    </ul>
+                </div>
+          
+                <div class="text-description-box">
+                    <h2>References</h2>
+                    <p>
+                        <a href="https://arcticwolf.com/resources/blog/arctic-wolf-observes-july-2025-uptick-in-akira-ransomware-activity-targeting-sonicwall-ssl-vpn/?utm_source=chatgpt.com" target="_blank">Arctic Wolf</a> |
+                        <a href="https://www.tenable.com/blog/faq-about-sonicwall-gen-7-firewall-ransomware-activity-akira?utm_source=chatgpt.com" target="_blank">SonicWall Tenable®</a>
+                    </p>
+                </div>
+            </section>
+            <footer>
+                <p>For further assistance, contact us at <a href="mailto:info@accorian.com">info@accorian.com</a> or schedule an appointment via our <a href="https://calendly.com/accorian/30min" target="_blank">Calendly link</a>.</p>
+                <p><strong>Threat Advisory</strong><br /><strong>Team Accorian</strong></p>
+            </footer>
+        </article>
+    </div>
+</body>
+</html>
