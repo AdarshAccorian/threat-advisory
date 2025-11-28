@@ -13,8 +13,8 @@ header.article-header {border-bottom: 1px solid var(--border-light); padding-bot
 .score-pill{color: var(--card-bg);font: normal normal 800 20px/1.5 var(--font-family);background-color: #1426c5;text-align: center;padding: 5px;}
 .score-pill span{display: block;font: normal normal 400 14px/1.5 var(--font-family);}
 .score-pills{text-align: center;padding: 5px;display: flex;align-items: center;}
-.high-bg{background-color: #1426c5;}
-.critical-bg{background-color: #ea2350;}
+.high-bg{background-color: #1426c5;}.high{background-color: #1426c5;}
+.critical-bg{background-color: #ea2350;}.critical{background-color: #ea2350;}
 .score-pills h5{border-right: 1px solid var(--card-bg);padding: 0px 12px;color: var(--card-bg);font: normal normal 600 16px/1.5 var(--font-family);}
 .score-pills h5:last-child{border-right: none;}
 .score-pills h5 span{display: block;font: normal normal 400 14px/1.5 var(--font-family);}
